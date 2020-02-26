@@ -1,0 +1,159 @@
+package Day1;
+import java.util.TreeSet;     //tree is used for data ascending
+import java.util.Set;
+
+
+public class Lab2 {
+
+	public static void main(String[] args) {
+		Set<String> set;
+		set=new TreeSet<String>();
+		
+		set.add("ram");
+		set.add("rama");
+		set.add("sram");
+		set.add("tam");
+		set.add("dam");
+		
+		for (String t:set)
+			System.out.println(t);
+		
+
+	}
+
+}
+
+--------------- HASH SET IS USED FOR UNORDERED LIST-----------
+package Day1;
+import java.util.HashSet;
+import java.util.Set;
+
+
+public class Lab2 {
+
+	public static void main(String[] args) {
+		Set<String> set;
+		set=new HashSet<String>();
+		
+		set.add("ram");
+		set.add("rama");
+		set.add("sram");
+		set.add("tam");
+		set.add("dam");
+		
+		for (String t:set)
+			System.out.println(t);
+		
+
+	}
+
+}
+
+
+-----------FUNCTIONS PERFORMING IN SET-----------------
+
+package Day1;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
+
+
+public class Lab2 {
+
+	public static void main(String[] args) {
+		Set<String> set;
+		set=new HashSet<String>();
+		
+		set.add("ram");
+		set.add("rama");
+		set.add("sram");
+		set.add("tam");
+		set.add("dam");
+		//traverse list----using for each loop
+		for (String t:set)
+			System.out.println(t);
+		
+		//traverse list--------using algo:Iterator
+	
+	Iterator<String> iter=set.iterator();
+	while(iter.hasNext()) {
+		System.out.println(iter.next());
+	}
+	}
+
+}
+
+
+-----------------------------MAP----------------------------------
+
+package Day1;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Lab3 {
+
+	public static void main(String[] args) {
+		Map<Integer,String>map;
+		map=new HashMap<Integer,String>();
+		map.put(100,"ram");
+		map.put(400,"rama");
+		map.put(300,"raman");
+		map.put(100,"ram");
+		map.put(100,"shyam");
+		System.out.println(map);
+		
+
+	}
+
+}
+output:{400=rama, 100=shyam, 300=raman}
+
+----------using tree in map------------------
+package Day1;
+
+import java.util.TreeMap;
+import java.util.Map;
+
+public class Lab3 {
+
+	public static void main(String[] args) {
+		Map<Integer,String>map;
+		map=new TreeMap<Integer,String>();
+		map.put(100,"ram");
+		map.put(400,"rama");
+		map.put(300,"raman");
+		map.put(100,"ram");
+		map.put(100,"shyam");
+		System.out.println(map);
+		                                //to read data using key
+		String t=map.get(200);
+		System.out.println(t);
+
+	//traverse map 2 types:
+		//process1:using key set[each key only]
+		Set<Integer>keys=map.keySet();//return all keys as a set<>
+		for(Integer key:keys)
+		{
+			System.out.println(key+"--------"+map.get(key));
+		}
+		
+		//process 2:using entry(key-value) sets:
+		Set<Entry<Integer,String>>entrys=map.entrySet();
+		for(Entry<Integer,String> entry:entrys) {
+			System.out.println(entry.getKey()+"--------"+entry.getValue());
+		}
+	}
+	
+
+}
+
+o/p:{100=shyam, 300=raman, 400=rama}
+o/p:null
+o/p process1:100--------shyam
+300--------raman
+400--------rama
+o/p process2:100--------shyam
+300--------raman
+400--------rama
